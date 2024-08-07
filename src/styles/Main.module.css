@@ -1,14 +1,10 @@
 .main-container {
-    display: flex;
-   
-    height: 100vh;
-    background-image: linear-gradient(to right, #000000, #1c1c1c);
-    /* background-image: linear-gradient(to right, #1c1c1c, #000000); */
-    /* background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364);  */
-  /* background-image: url('/public/images/backdrop.jpg'); */
-  background-size: cover; /* Ensure the image covers the entire container */
-  background-position: center; /* Center the image */
+  display: flex;
+
+  height: 100vh;
+  background-image: linear-gradient(to right, #000000, #1c1c1c);
+
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  }
-  
-  
+}

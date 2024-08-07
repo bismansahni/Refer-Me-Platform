@@ -1,31 +1,114 @@
-/* Toastify.css */
-
-.toast-container {
-    font-family: 'Fira Code';
+/* .toast-container {
+  font-family: "Fira Code", monospace;
 }
 
 .Toastify__toast-container {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  border-radius: 1.8em;
+}
+
+.Toastify__toast {
+  background-color: #1c1c1c;
+  color: white;
+  border-radius: 1.8em;
+  padding: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  font-family: "Fira Code", monospace;
+  animation: fade-slide-in 0.5s ease, fade-out 0.5s ease 5s forwards;
+}
+
+.Toastify__toast-body {
+  font-size: 1.2em;
+}
+
+.Toastify__progress-bar {
+  background-color: #feb47b;
+}
+
+@keyframes fade-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+} */
+
+
+
+
+.toast-container {
+    font-family: "Fira Code", monospace;
+  }
+  
+  .Toastify__toast-container {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     width: auto;
-    border-radius: 10px;
-}
-
-.Toastify__toast {
-    background-color: pink;
-    color: black;
-    border-radius: 10px;
+    border-radius: 0.4em;
+  }
+  
+  .Toastify__toast {
+    background-color: #1c1c1c;
+    color: white;
+    border-radius: 0.4em;
     padding: 16px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* border: 3px solid white; */
-    font-weight: bold;  
-}
-
-.Toastify__toast-body {
+    font-weight: bold;
+    font-family: "Fira Code", monospace;
+    text-align: center; /* Centering the text */
+    animation: fade-slide-in 0.5s ease, fade-out 0.5s ease 5s forwards;
+  }
+  
+  .Toastify__toast-body {
     font-size: 1.2em;
-}
-
-.Toastify__progress-bar {
-    background-color: purple;
-}
+  }
+  
+  .Toastify__progress-bar {
+    background-color: #feb47b;
+    height: 4px; /* Shorten the height of the progress bar */
+    border-radius: 0 0 0.5em 0.5em; /* Match the toast border-radius */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    transform-origin: left;
+    transition: transform 0.5s linear;
+  }
+  
+  @keyframes fade-slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  

@@ -1,27 +1,3 @@
-// import React from 'react';
-// import '../styles/MyRequests.module.css';
-// import MyRequestsStyles from '../styles/MyRequests.module.css'; 
-
-// const MyRequests = () => {
-//   return (
-//     <div className={MyRequestsStyles['right-dashboard']}>
-//        <div className={MyRequestsStyles['right-dashboard-header']}>
-//         <h1> hello</h1>    this will have the request titles such as 'Amazon' and it will be listed down in order 
-//        </div>
-//        <div className={MyRequestsStyles['right-dashboard-left-box']}>
-//         <button> h1</button>  // this will have the text of the request suppose i click amazon the text will come here 
-       
-//        </div>
-//        <div className={MyRequestsStyles['right-dashboard-right-box']}>
-//         <p> jello</p>
-//        </div>
-//     </div>
-//   );
-// };
-
-// export default MyRequests;
-
-
 
 
 
