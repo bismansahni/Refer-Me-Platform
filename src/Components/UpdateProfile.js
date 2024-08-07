@@ -1,6 +1,9 @@
 
 
-// import React, { useState, useContext } from 'react';
+
+
+
+// import React, { useState, useEffect } from 'react';
 // import { toast, ToastContainer } from 'react-toastify';
 // import { useNavigate } from 'react-router-dom';
 // import { useProfile } from '../Context/ProfileContext';
@@ -8,9 +11,7 @@
 // import styles from '../styles/Profile.module.css';
 
 // const UpdateProfile = () => {
-//   const profileData = 'a';
-//   const updateProfileData = 'b';
-
+//   const { profileData, updateProfileData } = useProfile();
 //   const [formData, setFormData] = useState({
 //     current_job_role: profileData?.current_job_role || '',
 //     current_company: profileData?.current_company || '',
@@ -18,16 +19,23 @@
 //   });
 
 //   const hasUpdatedProfile = profileData?.current_job_role || profileData?.current_company || profileData?.resume;
-
 //   const [isEditable, setIsEditable] = useState(!hasUpdatedProfile);
 //   const navigate = useNavigate();
+
+//   useEffect(() => {
+//     setFormData({
+//       current_job_role: profileData?.current_job_role || '',
+//       current_company: profileData?.current_company || '',
+//       resume: profileData?.resume || ''
+//     });
+//   }, [profileData]);
 
 //   const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
 //   const validateResumeLink = (resume) => {
 //     const re = /^(ftp|http|https):\/\/[^ "]+$/;
 //     return re.test(String(resume).toLowerCase());
-//   }
+//   };
 
 //   const onSubmit = async (e) => {
 //     e.preventDefault();
@@ -64,10 +72,9 @@
 //     setIsEditable(true);
 //   };
 
-
-
 //   return (
 //     <div className={styles['right-dashboard']}>
+//       <ToastContainer />
 //       <div className={styles['right-dashboard-header']}>
 //         <h1>Update Profile</h1>
 //       </div>
@@ -115,15 +122,15 @@
 //         </form>
 //       </div>
 //       <div className={styles['bottom-box-updateprofile']}>
-//         <button> Update Profile</button>
+//         <button type="submit" onClick={isEditable ? onSubmit : onButtonClick}>
+//           {isEditable ? 'Update Profile' : 'Edit Profile'}
+//         </button>
 //       </div>
 //     </div>
 //   );
 // };
 
 // export default UpdateProfile;
-
-
 
 
 
@@ -137,9 +144,9 @@ import styles from '../styles/Profile.module.css';
 const UpdateProfile = () => {
   const { profileData, updateProfileData } = useProfile();
   const [formData, setFormData] = useState({
-    current_job_role: profileData?.current_job_role || '',
-    current_company: profileData?.current_company || '',
-    resume: profileData?.resume || ''
+    current_job_role: '',
+    current_company: '',
+    resume: ''
   });
 
   const hasUpdatedProfile = profileData?.current_job_role || profileData?.current_company || profileData?.resume;
@@ -147,11 +154,13 @@ const UpdateProfile = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setFormData({
-      current_job_role: profileData?.current_job_role || '',
-      current_company: profileData?.current_company || '',
-      resume: profileData?.resume || ''
-    });
+    if (profileData) {
+      setFormData({
+        current_job_role: profileData.current_job_role || '',
+        current_company: profileData.current_company || '',
+        resume: profileData.resume || ''
+      });
+    }
   }, [profileData]);
 
   const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -186,6 +195,11 @@ const UpdateProfile = () => {
       toast.success('Profile updated successfully!', { icon: false });
       updateProfileData(response);
       setIsEditable(false);
+      setFormData({
+        current_job_role: response.current_job_role,
+        current_company: response.current_company,
+        resume: response.resume
+      });
     } catch (error) {
       console.error('Profile update failed:', error);
       toast.error('Profile update failed.');
@@ -242,16 +256,20 @@ const UpdateProfile = () => {
               disabled={!isEditable}
               className={!isEditable ? styles['form-group input:disabled'] : ''}
             />
-          </div>
+   </div>
         </form>
-      </div>
-      <div className={styles['bottom-box-updateprofile']}>
-        <button type="submit" onClick={isEditable ? onSubmit : onButtonClick}>
-          {isEditable ? 'Update Profile' : 'Edit Profile'}
-        </button>
-      </div>
-    </div>
+       </div>
+       <div className={styles['bottom-box-updateprofile']}>
+         <button type="submit" onClick={isEditable ? onSubmit : onButtonClick}>
+           {isEditable ? 'Update Profile' : 'Edit Profile'}
+         </button>
+       </div>
+     </div>
   );
 };
 
-export default UpdateProfile;
+
+ export default UpdateProfile;
+ 
+
+
