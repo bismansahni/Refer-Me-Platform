@@ -1,0 +1,31 @@
+/* Toastify.css */
+
+.toast-container {
+    font-family: 'Fira Code';
+}
+
+.Toastify__toast-container {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    border-radius: 10px;
+}
+
+.Toastify__toast {
+    background-color: pink;
+    color: black;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* border: 3px solid white; */
+    font-weight: bold;  
+}
+
+.Toastify__toast-body {
+    font-size: 1.2em;
+}
+
+.Toastify__progress-bar {
+    background-color: purple;
+}
