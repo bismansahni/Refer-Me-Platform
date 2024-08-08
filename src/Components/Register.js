@@ -188,7 +188,7 @@ const Register = () => {
       <div className={styles['register-box']}>
         <div className={styles['register-box-left']}>
           <h1>Become a Referrer and Help Others Succeed!</h1>
-          <h1>Get Referred to Your Dream Job!!</h1>
+          <h1>Get Referred to Your Dream Job!</h1>
         </div>
         <div className={styles['register-box-right']}>
           <div className={styles['heading-box']}>
