@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { getNotifications } from '../services/api.js';
 import BeReferrerStyles from '../styles/BeReferrer.module.css';
 import { useProfile } from '../Context/ProfileContext';
-import { toast, ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const BeReferrer = () => {
   const [selectedRequest, setSelectedRequest] = useState(null);
@@ -65,39 +66,99 @@ const BeReferrer = () => {
     navigate('/dashboard');
   };
 
-  return (
-    <div className={BeReferrerStyles['right-dashboard']}>
-      <ToastContainer style={{ zIndex: 10000 }} />
-      {showOverlay && <div className={BeReferrerStyles.overlay}></div>}
-      <div className={BeReferrerStyles['right-dashboard-header']}>
-        <h1>Referral Requests</h1>
-      </div>
-      <div className={BeReferrerStyles['right-dashboard-left-box']}>
-        {notifications.map((notification, index) => (
-          <button
-            key={index}
-            className={BeReferrerStyles['request-preview']}
-            onClick={() => setSelectedRequest(notification)}
-          >
-            Your request to {notification.target_company}
-          </button>
-        ))}
-      </div>
-      <div className={BeReferrerStyles['right-dashboard-right-box']}>
-        {selectedRequest ? (
-          <div className={BeReferrerStyles['request-details']}>
-            <h3>Company: {selectedRequest.target_company}</h3>
-            <h3>Job Link: &nbsp;<a href={selectedRequest.target_job} target="_blank" rel="noopener noreferrer">View Job Posting</a></h3>
-            <h3>Resume Link: &nbsp;<a href={selectedRequest.user.resume} target="_blank" rel="noopener noreferrer">View Resume</a></h3>
-          </div>
-        ) : (
-          <div className={BeReferrerStyles['no-selection']}>
-            <p>Select a referral request to view details</p>
-          </div>
-        )}
-      </div>
+//   return (
+//     <div className={BeReferrerStyles['right-dashboard']}>
+//       <ToastContainer style={{ zIndex: 10000 }} />
+//       {showOverlay && <div className={BeReferrerStyles.overlay}></div>}
+//       <div className={BeReferrerStyles['right-dashboard-header']}>
+//         <h1>Referral Requests</h1>
+//       </div>
+//       <div className={BeReferrerStyles['right-dashboard-left-box']}>
+//         {notifications.map((notification, index) => (
+//           <button
+//             key={index}
+//             className={BeReferrerStyles['request-preview']}
+//             onClick={() => setSelectedRequest(notification)}
+//           >
+//             Your request to {notification.target_company}
+//           </button>
+//         ))}
+//       </div>
+//       <div className={BeReferrerStyles['right-dashboard-right-box']}>
+//         {selectedRequest ? (
+//           <div className={BeReferrerStyles['request-details']}>
+//             <h3>Company: {selectedRequest.target_company}</h3>
+//             <h3>Job Link: &nbsp;<a href={selectedRequest.target_job} target="_blank" rel="noopener noreferrer">View Job Posting</a></h3>
+//             <h3>Resume Link: &nbsp;<a href={selectedRequest.user.resume} target="_blank" rel="noopener noreferrer">View Resume</a></h3>
+//           </div>
+//         ) : (
+//           <div className={BeReferrerStyles['no-selection']}>
+//             <p>Select a referral request to view details</p>
+//           </div>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default BeReferrer;
+
+
+
+
+return (
+  <div className={BeReferrerStyles["right-dashboard"]}>
+   <ToastContainer />
+    {showOverlay && <div className={BeReferrerStyles.overlay}></div>}
+    <div className={BeReferrerStyles["right-dashboard-header"]}>
+      <h1>Referral Requests</h1>
     </div>
-  );
+    <div className={BeReferrerStyles["right-dashboard-left-box"]}>
+      {notifications.map((notification, index) => (
+        <button
+          key={index}
+          className={BeReferrerStyles["request-preview"]}
+          onClick={() => setSelectedRequest(notification)}
+        >
+          Your request to {notification.target_company}
+        </button>
+      ))}
+    </div>
+    <div className={BeReferrerStyles["right-dashboard-right-box"]}>
+      {notifications.length === 0 ? (
+        <p className={BeReferrerStyles["no-requests"]}>You don't have any requests</p>
+      ) : selectedRequest ? (
+        <div className={BeReferrerStyles["request-details"]}>
+          <h3>Company: {selectedRequest.target_company}</h3>
+          <h3>
+            Job Link: &nbsp;
+            <a
+              href={selectedRequest.target_job}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Job Posting
+            </a>
+          </h3>
+          <h3>
+            Resume Link: &nbsp;
+            <a
+              href={selectedRequest.user.resume}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Resume
+            </a>
+          </h3>
+        </div>
+      ) : (
+        <div className={BeReferrerStyles["no-selection"]}>
+          <p>Select a referral request to view details</p>
+        </div>
+      )}
+    </div>
+  </div>
+);
 };
 
 export default BeReferrer;

@@ -536,6 +536,7 @@ import { requestReferral } from '../services/api';
 import GetReferredStyles from '../styles/GetReferred.module.css';
 import popupStyles from '../styles/Popup.module.css';
 
+
 const GetReferred = () => {
   const { profileData, fetchProfileData } = useProfile();
   const navigate = useNavigate();
@@ -652,7 +653,7 @@ const GetReferred = () => {
 
   return (
     <div className={GetReferredStyles['right-dashboard']}>
-      <ToastContainer style={{ zIndex: 10000 }} />
+      <ToastContainer />
       {showOverlay && <div className={GetReferredStyles.overlay}></div>}
       <div className={GetReferredStyles['right-dashboard-header']}>
         <h1>Get Referred</h1>

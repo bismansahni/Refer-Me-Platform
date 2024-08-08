@@ -8,3 +8,17 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    padding: 0.5rem;
+  }
+}

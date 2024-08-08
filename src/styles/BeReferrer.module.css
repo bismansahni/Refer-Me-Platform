@@ -320,3 +320,15 @@
     opacity: 1;
   }
 }
+
+
+
+.no-requests  {
+  font-size: 1.3em; /* Consistent font size */
+  color: white; /* Consistent text color */
+  /* text-align: center;  */
+  margin-top: 20px; /* Add some top margin */
+  font-family: "Fira Code", monospace; /* Consistent font family */
+  animation: fade-in 0.5s ease; /* Consistent animation */
+  background-color: transparent; /* Consistent background color */
+}
