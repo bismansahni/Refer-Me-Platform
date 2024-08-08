@@ -137,8 +137,7 @@
 
 
 
-
-
+/* General Styles */
 .right-dashboard {
   position: absolute;
   left: 32%;
@@ -321,14 +320,259 @@
   }
 }
 
-
-
 .no-requests  {
   font-size: 1.3em; /* Consistent font size */
   color: white; /* Consistent text color */
-  /* text-align: center;  */
   margin-top: 20px; /* Add some top margin */
   font-family: "Fira Code", monospace; /* Consistent font family */
   animation: fade-in 0.5s ease; /* Consistent animation */
   background-color: transparent; /* Consistent background color */
 }
+
+/* Media Queries */
+@media (max-width: 1440px) {
+  .right-dashboard {
+    left: 25%;
+    width: 70%;
+    top: 10%;
+    height: auto;
+    margin-right: 0;
+  }
+
+  .right-dashboard-left-box {
+    width: 30%;
+  }
+
+  .right-dashboard-right-box {
+    width: 70%;
+    left: 30%;
+  }
+
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-group label {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input {
+    width: 100%;
+  }
+
+  .bottom-box-updateprofile button {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .right-dashboard {
+    left: 20%;
+    width: 75%;
+    top: 10%;
+    height: auto;
+    margin-right: 0;
+  }
+
+  .right-dashboard-left-box {
+    width: 35%;
+  }
+
+  .right-dashboard-right-box {
+    width: 65%;
+    left: 35%;
+  }
+
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-group label {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input {
+    width: 100%;
+  }
+
+  .bottom-box-updateprofile button {
+    width: 50%;
+  }
+}
+
+@media (max-width: 992px) {
+  .right-dashboard {
+    left: 15%;
+    width: 80%;
+    top: 5%;
+    height: auto;
+    margin-right: 0;
+  }
+
+  .right-dashboard-left-box {
+    width: 40%;
+  }
+
+  .right-dashboard-right-box {
+    width: 60%;
+    left: 40%;
+  }
+
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-group label {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input {
+    width: 100%;
+  }
+
+  .bottom-box-updateprofile button {
+    width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .right-dashboard {
+    left: 10%;
+    width: 80%;
+    top: 5%;
+    height: auto;
+    margin-right: 0;
+  }
+
+  .right-dashboard-left-box {
+    width: 45%;
+  }
+
+  .right-dashboard-right-box {
+    width: 55%;
+    left: 45%;
+  }
+
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-group label {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input {
+    width: 100%;
+  }
+
+  .bottom-box-updateprofile button {
+    width: 70%;
+  }
+}
+
+@media (max-width: 576px) {
+  .right-dashboard {
+    left: 5%;
+    width: 90%;
+    top: 5%;
+    height: auto;
+    margin-right: 0;
+  }
+
+  .right-dashboard-left-box {
+    width: 100%;
+    position: relative;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .right-dashboard-right-box {
+    width: 100%;
+    left: 0;
+    position: relative;
+  }
+
+  .form-group {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .form-group label {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input {
+    width: 100%;
+  }
+
+  .bottom-box-updateprofile button {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .right-dashboard {
+    left: 2%;
+    width: 95%;
+    top: 5%;
+    height: auto;
+    margin-right: 0;
+  }
+
+  .right-dashboard-left-box {
+    width: 100%;
+    position: relative;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .right-dashboard-right-box {
+    width: 100%;
+    left: 0;
+    position: relative;
+  }
+
+  .right-dashboard-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .middle-box-updateprofile {
+    padding: 0;
+  }
+
+  .form-group {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 0;
+  }
+
+  .form-group label {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input {
+    width: 100%;
+    height: 2.5em;
+    font-size: 1rem;
+  }
+
+  .bottom-box-updateprofile button {
+    width: 90%;
+    height: 2.5em;
+    font-size: 1rem;
+  }
+}
+
+
+
