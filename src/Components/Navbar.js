@@ -39,6 +39,8 @@
 
 
 
+
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavbarStyles from '../styles/Navbar.module.css';
@@ -49,7 +51,7 @@ const NavbarItems = [
   { name: 'My Requests', component: 'My Requests' },
   { name: 'Be A Referrer', component: 'Be A Referrer' },
   { name: 'Get Referred', component: 'Get Referred' },
-  { name: 'Logout', component: 'Logout' } // Assuming you have a logout handling mechanism
+  { name: 'Logout', component: 'Logout' } 
 ];
 
 const Navbar = ({ onToggleDashboard }) => {
@@ -61,10 +63,14 @@ const Navbar = ({ onToggleDashboard }) => {
     navigate('/login');
   };
 
+  const getFirstName = (fullName) => {
+    return fullName ? fullName.split(' ')[0] : 'Loading...';
+  };
+
   return (
     <div className={NavbarStyles['outer-navbar']}>
       <div className={NavbarStyles['navbar-name-header']}>
-        <h1>{profileData ? profileData.name : 'Loading...'}</h1> 
+        <h1>{profileData ? getFirstName(profileData.name) : 'Loading...'}</h1> 
       </div>
       <div className={NavbarStyles['nav-items-container']}>
         {NavbarItems.map((item, index) => (
@@ -82,5 +88,3 @@ const Navbar = ({ onToggleDashboard }) => {
 };
 
 export default Navbar;
-
-

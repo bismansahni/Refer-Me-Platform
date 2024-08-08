@@ -704,10 +704,11 @@ const GetReferred = () => {
             <h3>Your Profile Data</h3>
             <p><strong>Current Job Role:</strong> {profileData.current_job_role}</p>
             <p><strong>Current Company:</strong> {profileData.current_company}</p>
-            <p><strong>Resume:</strong> {profileData.resume}</p>
+            <p><strong>Resume:</strong> <a href="{profileData.resume}">View Resume</a></p>
+
           </div>
           <div className={popupStyles['popup-box-bottom']}>
-            <button onClick={handleConfirmProfile}>Confirm Profile Details</button>
+            <button onClick={handleConfirmProfile}>Confirm  Details</button>
             <button onClick={handleUpdateProfile}>Update Profile</button>
             <button onClick={handleClosePopup}>Close</button>
           </div>
