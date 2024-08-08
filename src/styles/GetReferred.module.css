@@ -562,5 +562,6 @@
     width: 90%;
     height: 2.5em;
     font-size: 1rem;
+    white-space: nowrap; 
   }
 }
