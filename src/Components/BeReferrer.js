@@ -285,9 +285,9 @@ const MyRequests = () => {
           <p className={styles["no-requests"]}>You don't have any requests</p>
         ) : selectedRequest ? (
           <div className={styles["request-details"]}>
-            <h3>Requestor: {selectedRequest.referralRequest.user.name}</h3>
-            <h3>Target Company: {selectedRequest.target_company}</h3>
-            <h3>
+            <p>Requestor: {selectedRequest.referralRequest.user.name}</p>
+            <p>Target Company: {selectedRequest.target_company}</p>
+            <p>
               Job Link: &nbsp;
               <a
                 href={selectedRequest.target_job}
@@ -296,8 +296,8 @@ const MyRequests = () => {
               >
                 View Job Posting
               </a>
-            </h3>
-            <h3>
+            </p>
+            <p>
               Resume Link: &nbsp;
               <a
                 href={selectedRequest.user.resume}
@@ -306,9 +306,9 @@ const MyRequests = () => {
               >
                 View Resume
               </a>
-            </h3>
-            <h3>Current Company: {selectedRequest.user.current_company}</h3>
-            <h3>Current Job Role: {selectedRequest.user.current_job_role}</h3>
+            </p>
+            <p>Current Company: {selectedRequest.user.current_company}</p>
+            <p>Current Job Role: {selectedRequest.user.current_job_role}</p>
           </div>
         ) : (
           <div className={styles["no-selection"]}>

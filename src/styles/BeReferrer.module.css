@@ -238,14 +238,14 @@
   align-items: center;
 }
 
-.request-details h3 {
+.request-details p {
   text-align: center;
   display: flex;
   justify-content: center;
   font-family: "Fira Code";
   align-items: center;
   color: white;
-  font-size: 1.0em;
+  font-size: 1rem;
   animation: fade-in 0.5s ease;
 }
 
