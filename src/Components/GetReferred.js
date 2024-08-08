@@ -704,7 +704,8 @@ const GetReferred = () => {
             <h3>Your Profile Data</h3>
             <p><strong>Current Job Role:</strong> {profileData.current_job_role}</p>
             <p><strong>Current Company:</strong> {profileData.current_company}</p>
-            <p><strong>Resume:</strong> <a href="{profileData.resume}">View Resume</a></p>
+            <p><strong>Resume:</strong> <a href="{profileData.resume}" target="_blank" rel="noopener noreferrer">View Resume</a></p>
+
 
           </div>
           <div className={popupStyles['popup-box-bottom']}>

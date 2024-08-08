@@ -159,12 +159,13 @@ const BeReferrer = () => {
           <p className={BeReferrerStyles["no-requests"]}>You don't have any requests</p>
         ) : selectedRequest ? (
           <div className={BeReferrerStyles["request-details"]}>
-            <h3>Requestor: {selectedRequest.referralRequest.user_name}</h3>
-            <h3>Target Company: {selectedRequest.referralRequest.target_company}</h3>
+          <h3>Requestor: {selectedRequest.user.name}</h3>
+          <h3>Target Company: {selectedRequest.referralDetails.target_company}</h3>
+
             <h3>
               Job Link: &nbsp;
               <a
-                href={selectedRequest.referralRequest.target_job}
+                href={selectedRequest.referralDetails.target_job}
                 target="_blank"
                 rel="noopener noreferrer"
               >
