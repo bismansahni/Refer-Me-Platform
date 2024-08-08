@@ -1,0 +1,183 @@
+/* OtpModal.module.css */
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1000;
+  }
+  
+  .popup-box {
+    background: #1c1c1c;
+    padding: 2em;
+    border-radius: 1.8em 1.8em 0 0;
+    max-width: 40vw;
+    width: 100%;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: "Fira Code", monospace;
+  }
+  
+  .popup-box h3 {
+    margin-top: 0;
+    font-size: 2em;
+  }
+  
+  .popup-box input {
+    margin: 1em 0;
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.5em;
+    width: 100%;
+    font-size: 1em;
+    font-family: "Fira Code", monospace;
+  }
+  
+  .popup-box-bottom {
+    background: #1c1c1c;
+    padding: 2em;
+    border-top: none;
+    border-radius: 0 0 1.8em 1.8em;
+    max-width: 40vw;
+    width: 100%;
+    z-index: 1001;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .popup-box-bottom button {
+    height: 3em;
+    width: 30%;
+    font-family: "Fira Code", monospace;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #1c1c1c;
+    background-color: white;
+    background-image: linear-gradient(to right, #ffffff, #f0f0f0);
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+    box-shadow: 0 0.25em 0.375em rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-box-bottom button:hover {
+    background-image: linear-gradient(to right, #f0f0f0, #ffffff);
+    box-shadow: 0 0.375em 0.5em rgba(0, 0, 0, 0.2);
+    transform: translateY(-0.125em);
+  }
+  
+  .popup-box-bottom button:active {
+    background-image: linear-gradient(to right, #ffffff, #f0f0f0);
+    box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
+    transform: translateY(0.0625em);
+  }
+  
+  /* Animation for popup appearance */
+  @keyframes popup-animation {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .popup-box, .popup-box-bottom {
+    animation: popup-animation 0.3s ease-in-out;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 1440px) {
+    .popup-box, .popup-box-bottom {
+      max-width: 50vw;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .popup-box, .popup-box-bottom {
+      max-width: 60vw;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .popup-box, .popup-box-bottom {
+      max-width: 70vw;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .popup-box, .popup-box-bottom {
+      max-width: 80vw;
+    }
+  
+    .popup-box h3 {
+      font-size: 1.8em;
+    }
+  
+    .popup-box p {
+      font-size: 1.2em;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .popup-box, .popup-box-bottom {
+      max-width: 90vw;
+      padding: 1.5em;
+    }
+  
+    .popup-box h3 {
+      font-size: 1.6em;
+    }
+  
+    .popup-box p {
+      font-size: 1em;
+    }
+  
+    .popup-box-bottom button {
+      height: 2.5em;
+      font-size: 1em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .popup-box, .popup-box-bottom {
+      max-width: 95vw;
+      padding: 1em;
+    }
+  
+    .popup-box h3 {
+      font-size: 1.4em;
+    }
+  
+    .popup-box p {
+      font-size: 0.9em;
+    }
+  
+    .popup-box-bottom {
+      flex-direction: column;
+    }
+  
+    .popup-box-bottom button {
+      width: 100%;
+      margin-bottom: 1em;
+    }
+  }
+  
