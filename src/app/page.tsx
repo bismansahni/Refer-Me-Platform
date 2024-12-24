@@ -1,8 +1,24 @@
+// import Hero from "@/components/LandingPage/hero";
+// import LandingPage from "@/components/LandingPage/LandingPageHeader";
+
+
+// export const App = () => {
+//   return (
+//     <div>
+//       <LandingPage />
+//       <Hero />
+//     </div>
+//   );
+// }
+// export default App;
+
+
+
 import Hero from "@/components/LandingPage/hero";
 import LandingPage from "@/components/LandingPage/LandingPageHeader";
 
 
-export const App = () => {
+export const MainApp = () => {
   return (
     <div>
       <LandingPage />
@@ -10,4 +26,4 @@ export const App = () => {
     </div>
   );
 }
-export default App;
+export default MainApp;
