@@ -18,7 +18,7 @@ import Hero from "@/components/LandingPage/hero";
 import LandingPage from "@/components/LandingPage/LandingPageHeader";
 
 
-export const MainApp = () => {
+const MainApp = () => {
   return (
     <div>
       <LandingPage />
