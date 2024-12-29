@@ -145,7 +145,7 @@ const LandingPageHeader = () => {
     const router = useRouter(); 
 
     const handleSubmit=()=>{
-        router.push('/sign-up')
+        router.push('/sign-in')
     }
   return (
     <nav className="bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300/80 fixed w-full z-20 top-0 dark:bg-gray-900 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800">
@@ -158,7 +158,7 @@ const LandingPageHeader = () => {
             type="button"
             className="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
-            Get Started
+            Login
           </button>
 
           <button
