@@ -23,6 +23,9 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Refer Me Platform",
   description: "Be a Referrer, Get Referred",
+  icons: {
+    icon: "/favicon.ico",
+  },
  
 };
 
